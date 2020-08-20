@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name Enemy
 
-export(int) var MAX_SPEED = 5
+export(int) var MAX_SPEED = 150
 export(int) var NAV_POINT_TARGET_RANGE = 4
 
 var nav_path = PoolVector2Array()
@@ -24,7 +24,7 @@ func move_along_path(move_amnt):
 	if move_amnt > dist_to_next:
 		move_amnt = dist_to_next
 	
-	position = start_point.linear_interpolate(nav_path[0], move_amnt)
+	position = start_point.move_toward(nav_path[0], move_amnt)
 	
 	if position.distance_to(nav_path[0]) <= NAV_POINT_TARGET_RANGE:
 		nav_path.remove(0)

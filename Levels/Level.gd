@@ -6,6 +6,7 @@ onready var soldier = $Soldier
 
 func _ready():
 	var simple_path = get_simple_path(soldier.position, endPoint.position)
+	print("path: ", simple_path)
 	soldier.nav_path = simple_path
 
 
