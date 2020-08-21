@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Structures/machine-gun.png" type="Texture" id=1]
+[ext_resource path="res://Structures/base3.png" type="Texture" id=2]
+[ext_resource path="res://Structures/DefenseStructure.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Structures/MachineGun.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 51.0098
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 203.002
+
+[node name="MachineGun" instance=ExtResource( 3 )]
+script = ExtResource( 4 )
+
+[node name="Base" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="Body" parent="." index="1"]
+texture = ExtResource( 1 )
+offset = Vector2( 20, 0 )
+
+[node name="Muzzle" parent="Body" index="0"]
+position = Vector2( 70, 0 )
+
+[node name="Collider" parent="." index="2"]
+shape = SubResource( 2 )
+
+[node name="Collider" parent="EnemyDetectionZone" index="0"]
+shape = SubResource( 1 )
+
+[editable path="EnemyDetectionZone"]

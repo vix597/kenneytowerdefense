@@ -1,15 +1,14 @@
-extends Navigation2D
+extends Node2D
 
 onready var endPoint = $EndPoint
-onready var soldier = $Soldier
+onready var enemySpawner = $EnemySpawner
+onready var navigation = $Navigation2D
 
 
 func _ready():
-	var simple_path = get_simple_path(soldier.position, endPoint.position)
-	print("path: ", simple_path)
-	soldier.nav_path = simple_path
+	enemySpawner.spawn()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_EnemySpawner_spawned(enemy):
+	var simple_path = navigation.get_simple_path(enemy.position, endPoint.position)
+	enemy.nav_path = simple_path

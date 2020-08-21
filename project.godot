@@ -9,10 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "StaticBody2D",
+"class": "DefenseStructure",
+"language": "GDScript",
+"path": "res://Structures/DefenseStructure.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://Enemies/Enemy.gd"
+}, {
+"base": "Position2D",
+"class": "EnemySpawner",
+"language": "GDScript",
+"path": "res://Enemies/EnemySpawner.gd"
 }, {
 "base": "Area2D",
 "class": "Hitbox",
@@ -24,15 +34,23 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Overlap/Hurtbox.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Projectile",
+"language": "GDScript",
+"path": "res://Projectile/Projectile.gd"
+}, {
 "base": "Node",
 "class": "Stats",
 "language": "GDScript",
 "path": "res://Stats/Stats.gd"
 } ]
 _global_script_class_icons={
+"DefenseStructure": "",
 "Enemy": "",
+"EnemySpawner": "",
 "Hitbox": "",
 "Hurtbox": "",
+"Projectile": "",
 "Stats": ""
 }
 
@@ -42,6 +60,11 @@ config/name="Kenney Tower Defense"
 config/description="Tower defense game for Kenney jam 2020"
 run/main_scene="res://World/World.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SaveAndLoad="*res://Utils/SaveAndLoad.gd"
+Utils="*res://Utils/Utils.gd"
 
 [display]
 
@@ -58,6 +81,8 @@ window/stretch/aspect="keep"
 2d_physics/layer_2="Enemy"
 2d_physics/layer_3="EnemyHurtbox"
 2d_physics/layer_4="ProjectileHitbox"
+2d_physics/layer_5="DefenseStructure"
+2d_physics/layer_6="DefenseStructureHurtbox"
 
 [rendering]
 

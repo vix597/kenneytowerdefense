@@ -15,6 +15,7 @@ func _physics_process(delta):
 	if nav_path.size() == 0:
 		return
 	var move_amnt = MAX_SPEED * delta
+	sprite.look_at(nav_path[0])
 	move_along_path(move_amnt)
 
 
@@ -36,3 +37,7 @@ func _on_EnemyStats_no_health():
 
 func _on_Hurtbox_take_damage(area):
 	stats.health -= area.DAMAGE
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
