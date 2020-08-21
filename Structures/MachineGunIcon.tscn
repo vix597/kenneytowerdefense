@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Structures/StructureIcon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Structures/machine-gun.png" type="Texture" id=2]
+[ext_resource path="res://Structures/base3.png" type="Texture" id=3]
+
+[node name="MachineGunIcon" instance=ExtResource( 1 )]
+visible = false
+TARGET_STRUCTURE = "res://Structures/MachineGun.tscn"
+
+[node name="Base" parent="." index="0"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="Body" parent="." index="1"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )

@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/percent-sign.png" type="Texture" id=1]
+[ext_resource path="res://UI/dollar-sign.png" type="Texture" id=2]
+[ext_resource path="res://UI/0.png" type="Texture" id=3]
+[ext_resource path="res://UI/StatsBar.gd" type="Script" id=4]
+
+[node name="StatsBar" type="Control"]
+anchor_right = 1.0
+margin_right = 0.00012207
+margin_bottom = 128.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.00012207
+margin_bottom = -4.0
+color = Color( 0, 0, 0, 0.141176 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -524.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hundreds" type="TextureRect" parent="HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 128.0
+texture = ExtResource( 3 )
+
+[node name="Tens" type="TextureRect" parent="HBoxContainer"]
+margin_left = 132.0
+margin_right = 260.0
+margin_bottom = 128.0
+texture = ExtResource( 3 )
+
+[node name="Ones" type="TextureRect" parent="HBoxContainer"]
+margin_left = 264.0
+margin_right = 392.0
+margin_bottom = 128.0
+texture = ExtResource( 3 )
+
+[node name="PercentSign" type="TextureRect" parent="HBoxContainer"]
+margin_left = 396.0
+margin_right = 524.0
+margin_bottom = 128.0
+texture = ExtResource( 1 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="DollarSign" type="TextureRect" parent="HBoxContainer2"]
+margin_right = 128.0
+margin_bottom = 128.0
+texture = ExtResource( 2 )
+
+[node name="Thousands" type="TextureRect" parent="HBoxContainer2"]
+margin_left = 132.0
+margin_right = 260.0
+margin_bottom = 128.0
+texture = ExtResource( 3 )
+
+[node name="Hundreds" type="TextureRect" parent="HBoxContainer2"]
+margin_left = 264.0
+margin_right = 392.0
+margin_bottom = 128.0
+texture = ExtResource( 3 )
+
+[node name="Tens" type="TextureRect" parent="HBoxContainer2"]
+margin_left = 396.0
+margin_right = 524.0
+margin_bottom = 128.0
+texture = ExtResource( 3 )
+
+[node name="Ones" type="TextureRect" parent="HBoxContainer2"]
+margin_left = 528.0
+margin_right = 656.0
+margin_bottom = 128.0
+texture = ExtResource( 3 )

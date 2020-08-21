@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/small-bush.png" type="Texture" id=2]
@@ -10,8 +10,7 @@
 [ext_resource path="res://World/small-tuft.png" type="Texture" id=8]
 [ext_resource path="res://World/large-bush.png" type="Texture" id=9]
 [ext_resource path="res://Effects/explosion-scar.png" type="Texture" id=10]
-[ext_resource path="res://Structures/SingleCannon.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Structures/MachineGun.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Structures/ConstructionZone.tscn" type="PackedScene" id=11]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 2321, 823, 2363, 869, 2363, 920, 2302, 932, 2105, 848, 1173, 926, 1231, 874, 1132, 859, 1197, 812, 1102, 219, 1183, 155, 1074, 162, 1123, 92, 656, 93, 756, 165, 672, 171, 597, 152, 606, 514, 668, 598, 558, 606, 645, 665, 367, 661, 319, 607, 305, 700, 227, 683, 220, 1215, 165, 1149, 334, 1151, 295, 1221 )
@@ -43,7 +42,7 @@ position = Vector2( 1798, 683 )
 texture = ExtResource( 10 )
 
 [node name="explosion-scar2" type="Sprite" parent="Scenery" index="1"]
-position = Vector2( 225, 873 )
+position = Vector2( 49, 787 )
 texture = ExtResource( 10 )
 
 [node name="dirt-spots" type="Sprite" parent="Scenery" index="2"]
@@ -115,8 +114,17 @@ texture = ExtResource( 4 )
 [node name="Navigation" parent="Navigation2D" index="0"]
 navpoly = SubResource( 1 )
 
-[node name="MachineGun" parent="." index="5" instance=ExtResource( 12 )]
-position = Vector2( 466, 458 )
+[node name="ConstructionZone" parent="." index="5" instance=ExtResource( 11 )]
+position = Vector2( 460, 835 )
 
-[node name="SingleCannon" parent="." index="6" instance=ExtResource( 11 )]
-position = Vector2( 449, 839 )
+[node name="ConstructionZone2" parent="." index="6" instance=ExtResource( 11 )]
+position = Vector2( 454, 450 )
+
+[node name="ConstructionZone3" parent="." index="7" instance=ExtResource( 11 )]
+position = Vector2( 895, 305 )
+
+[node name="ConstructionZone5" parent="." index="8" instance=ExtResource( 11 )]
+position = Vector2( 1348, 710 )
+
+[node name="ConstructionZone6" parent="." index="9" instance=ExtResource( 11 )]
+position = Vector2( 1602, 711 )

@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Structures/construction-zone.png" type="Texture" id=1]
+[ext_resource path="res://Structures/ConstructionZone.gd" type="Script" id=2]
+[ext_resource path="res://Structures/SingleCannonIcon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Structures/MachineGunIcon.tscn" type="PackedScene" id=4]
+
+[node name="ConstructionZone" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -52.0
+margin_top = -52.0
+margin_right = 52.0
+margin_bottom = 52.0
+color = Color( 0, 0, 0, 0.266667 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 64.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SingleCannonIcon" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -100 )
+
+[node name="MachineGunIcon" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, 100 )
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="build" from="SingleCannonIcon" to="." method="_on_SingleCannonIcon_build"]
+[connection signal="build" from="MachineGunIcon" to="." method="_on_MachineGunIcon_build"]

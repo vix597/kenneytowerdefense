@@ -23,5 +23,9 @@ func set_health(value):
 		emit_signal("no_health")
 
 
+func get_remaining_health_ratio():
+	return float(self.health) / float(self.max_health)
+
+
 func _ready():
 	self.health = self.max_health

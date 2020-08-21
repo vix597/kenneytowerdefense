@@ -5,14 +5,15 @@
 [ext_resource path="res://Structures/base2.png" type="Texture" id=3]
 [ext_resource path="res://Structures/SingleCannon.gd" type="Script" id=4]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 51.1566
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=2]
 radius = 326.014
 
 [node name="SingleCannon" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
+ATTACK_COOLDOWN_TIME = 1.0
 
 [node name="Base" parent="." index="0"]
 texture = ExtResource( 3 )
@@ -25,9 +26,9 @@ offset = Vector2( 24, 0 )
 position = Vector2( 85, 0 )
 
 [node name="Collider" parent="." index="2"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Collider" parent="EnemyDetectionZone" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [editable path="EnemyDetectionZone"]

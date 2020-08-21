@@ -3,12 +3,28 @@ class_name Enemy
 
 export(int) var MAX_SPEED = 150
 export(int) var NAV_POINT_TARGET_RANGE = 4
+export(int) var HEALTH_RADIUS = 36
+export(int) var HEALTH_BAR_HIDDEN_RADIUS = 20
+export(Color) var HEALTH_COLOR = Color.green
 
 var nav_path = PoolVector2Array()
+var visible_radius = 0
 
 onready var hurtbox = $Hurtbox
 onready var sprite = $Sprite
 onready var stats = $EnemyStats
+
+
+func _ready():
+	visible_radius = HEALTH_RADIUS - HEALTH_BAR_HIDDEN_RADIUS
+
+
+func _draw():
+	var radius = float(visible_radius) * stats.get_remaining_health_ratio()
+	radius += HEALTH_BAR_HIDDEN_RADIUS
+
+	var transform = get_transform()
+	draw_circle(transform.xform_inv(position), radius, HEALTH_COLOR)
 
 
 func _physics_process(delta):
@@ -37,6 +53,7 @@ func _on_EnemyStats_no_health():
 
 func _on_Hurtbox_take_damage(area):
 	stats.health -= area.DAMAGE
+	update()
 
 
 func _on_VisibilityNotifier2D_screen_exited():
