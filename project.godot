@@ -53,6 +53,11 @@ _global_script_classes=[ {
 "class": "StructureIcon",
 "language": "GDScript",
 "path": "res://Structures/StructureIcon.gd"
+}, {
+"base": "CanvasLayer",
+"class": "UI",
+"language": "GDScript",
+"path": "res://UI/UI.gd"
 } ]
 _global_script_class_icons={
 "ConstructionZone": "",
@@ -63,7 +68,8 @@ _global_script_class_icons={
 "Hurtbox": "",
 "Projectile": "",
 "Stats": "",
-"StructureIcon": ""
+"StructureIcon": "",
+"UI": ""
 }
 
 [application]
@@ -77,6 +83,7 @@ config/icon="res://icon.png"
 
 SaveAndLoad="*res://Utils/SaveAndLoad.gd"
 Utils="*res://Utils/Utils.gd"
+LevelStats="*res://Stats/LevelStats.tscn"
 
 [display]
 
@@ -95,6 +102,7 @@ window/stretch/aspect="keep"
 2d_physics/layer_4="ProjectileHitbox"
 2d_physics/layer_5="DefenseStructure"
 2d_physics/layer_6="DefenseStructureHurtbox"
+2d_physics/layer_7="LevelHurtbox"
 
 [rendering]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/small-bush.png" type="Texture" id=2]
@@ -16,6 +16,10 @@
 vertices = PoolVector2Array( 2321, 823, 2363, 869, 2363, 920, 2302, 932, 2105, 848, 1173, 926, 1231, 874, 1132, 859, 1197, 812, 1102, 219, 1183, 155, 1074, 162, 1123, 92, 656, 93, 756, 165, 672, 171, 597, 152, 606, 514, 668, 598, 558, 606, 645, 665, 367, 661, 319, 607, 305, 700, 227, 683, 220, 1215, 165, 1149, 334, 1151, 295, 1221 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 4, 3, 5, 6 ), PoolIntArray( 6, 5, 7, 8 ), PoolIntArray( 8, 7, 9, 10 ), PoolIntArray( 10, 9, 11, 12 ), PoolIntArray( 13, 12, 11, 14 ), PoolIntArray( 13, 14, 15, 16 ), PoolIntArray( 17, 16, 15, 18 ), PoolIntArray( 19, 17, 18, 20 ), PoolIntArray( 19, 20, 21, 22 ), PoolIntArray( 22, 21, 23, 24 ), PoolIntArray( 25, 26, 24, 23, 27, 28 ) ]
 outlines = [ PoolVector2Array( 165, 1149, 227, 683, 319, 607, 558, 606, 606, 514, 597, 152, 656, 93, 1123, 92, 1183, 155, 1197, 812, 1231, 874, 2105, 848, 2321, 823, 2363, 869, 2363, 920, 2302, 932, 1173, 926, 1132, 859, 1102, 219, 1074, 162, 756, 165, 672, 171, 668, 598, 645, 665, 367, 661, 305, 700, 334, 1151, 295, 1221, 220, 1215 ) ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 29.6353
+height = 265.459
 
 [node name="Level_00" instance=ExtResource( 1 )]
 
@@ -128,3 +132,11 @@ position = Vector2( 1348, 710 )
 
 [node name="ConstructionZone6" parent="." index="9" instance=ExtResource( 11 )]
 position = Vector2( 1602, 711 )
+
+[node name="Hurtbox" parent="." index="10"]
+position = Vector2( 1938.82, 898.425 )
+
+[node name="Collider" parent="Hurtbox" index="0"]
+shape = SubResource( 2 )
+
+[editable path="Hurtbox"]

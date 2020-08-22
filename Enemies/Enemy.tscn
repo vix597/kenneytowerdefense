@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Stats/EnemyStats.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=4]
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 2
@@ -23,8 +24,13 @@ collision_layer = 4
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( -7.62939e-06, 3.8147e-06 )
 scale = Vector2( 12.8, 12.8 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 4 )]
+collision_mask = 64
 [connection signal="no_health" from="EnemyStats" to="." method="_on_EnemyStats_no_health"]
 [connection signal="take_damage" from="Hurtbox" to="." method="_on_Hurtbox_take_damage"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 
 [editable path="Hurtbox"]
+
+[editable path="Hitbox"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+var bar_width = 0
+
+onready var healthBarEmpty = $HealthBarEmpty
+onready var healthBarFull = $HealthBarFull
+
+
+func _ready():
+	LevelStats.connect(\"health_changed\", self, \"_on_LevelStats_health_changed\")
+	bar_width = healthBarEmpty.rect_size.x
+
+
+func _on_LevelStats_health_changed(value):
+	var ratio = LevelStats.get_remaining_health_ratio()
+	healthBarFull.rect_size.x = bar_width * ratio
+"
+
+[node name="HealthBar" type="Control"]
+margin_right = 512.0
+margin_bottom = 40.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBarEmpty" type="ColorRect" parent="."]
+margin_right = 512.0
+margin_bottom = 40.0
+color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBarFull" type="ColorRect" parent="."]
+margin_right = 512.0
+margin_bottom = 40.0
+color = Color( 0.0352941, 0.490196, 0.0196078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
