@@ -16,3 +16,12 @@ func instance_scene_on_main(packed_scene, position=Vector2.ZERO):
 	instance.global_position = position
 	main.add_child(instance)
 	return instance
+
+
+func RGBA(r, g, b, a):
+	var c = Color()
+	c.r8 = r
+	c.g8 = g
+	c.b8 = b
+	c.a8 = a
+	return c

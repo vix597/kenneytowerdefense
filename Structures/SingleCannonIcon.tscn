@@ -5,7 +5,6 @@
 [ext_resource path="res://Structures/base1.png" type="Texture" id=3]
 
 [node name="SingleCannonIcon" instance=ExtResource( 2 )]
-visible = false
 TARGET_STRUCTURE = "res://Structures/SingleCannon.tscn"
 
 [node name="Base" parent="." index="0"]

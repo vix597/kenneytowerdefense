@@ -10,7 +10,7 @@ enum {
 
 export(String, FILE, "*.tscn") var TARGET_STRUCTURE = ""
 export(int) var ICON_CIRCLE_RADIUS = 36
-export(Color) var ICON_CIRCLE_COLOR = Color("#e10f0f0f")
+export(Color) var ICON_CIRCLE_COLOR = Utils.RGBA(15, 15, 15, 200)
 
 var state = CLOSE
 
