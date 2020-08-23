@@ -5,7 +5,8 @@ export(int) var MAX_SPEED = 150
 export(int) var NAV_POINT_TARGET_RANGE = 4
 export(int) var HEALTH_RADIUS = 36
 export(int) var HEALTH_BAR_HIDDEN_RADIUS = 20
-export(Color) var HEALTH_COLOR = Color.green
+export(float) var MOVEMENT_BUFF = 1.0
+export(Color) var HEALTH_COLOR = Utils.RGBA(0, 140, 0, 115)
 
 var nav_path = PoolVector2Array()
 var visible_radius = 0
@@ -30,7 +31,7 @@ func _draw():
 func _physics_process(delta):
 	if nav_path.size() == 0:
 		return
-	var move_amnt = MAX_SPEED * delta
+	var move_amnt = (MAX_SPEED * MOVEMENT_BUFF) * delta
 	sprite.look_at(nav_path[0])
 	move_along_path(move_amnt)
 

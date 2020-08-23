@@ -2,6 +2,8 @@ extends Node2D
 
 signal level_complete()
 
+export(String, FILE, "*.tscn") var NEXT_LEVEL_PATH = ""
+export(bool) var FINAL_LEVEL = true
 export(int) var NUM_ROUNDS = 3
 
 onready var endPoint = $EndPoint
@@ -10,6 +12,7 @@ onready var navigation = $Navigation2D
 
 
 func _ready():
+	LevelStats.current_level_path = filename
 	LevelStats.rounds = NUM_ROUNDS
 	LevelStats.current_round = 1
 	next_round()

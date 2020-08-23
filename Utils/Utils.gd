@@ -18,7 +18,7 @@ func instance_scene_on_main(packed_scene, position=Vector2.ZERO):
 	return instance
 
 
-func RGBA(r, g, b, a):
+func RGBA(r, g, b, a=255):
 	var c = Color()
 	c.r8 = r
 	c.g8 = g

@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Levels/Level_00.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/World.gd" type="Script" id=3]
 
 [node name="World" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="UI" parent="." instance=ExtResource( 2 )]
-
-[node name="Level_00" parent="." instance=ExtResource( 1 )]

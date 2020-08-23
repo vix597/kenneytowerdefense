@@ -31,13 +31,7 @@ position = Vector2( 2281, 882 )
 
 [node name="EnemySpawner" parent="." index="2"]
 position = Vector2( 260, 1125 )
-SPAWN_RULES = [ {
-"quantity": 5,
-"scene_path": "res://Enemies/Soldier.tscn"
-}, {
-"quantity": 5,
-"scene_path": "res://Enemies/Robot.tscn"
-} ]
+ENEMIES_TO_SPAWN = 5
 
 [node name="Scenery" type="Node" parent="." index="3"]
 

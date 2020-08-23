@@ -6,7 +6,7 @@ var rounds = 0 setget set_rounds
 var current_round = 0 setget set_current_round
 
 onready var moneyLabel = $MoneyLabel
-onready var roundsLabel = $RoundsLabel
+onready var roundsLabel = $HBoxContainer/RoundsLabel
 onready var healthLabel = $HealthLabel
 
 
@@ -56,4 +56,8 @@ func set_money(value):
 
 func set_health(value):
 	health = value
+	if health < 25:
+		healthLabel.add_color_override("font_color", Utils.RGBA(230, 0, 0, 255))
+	else:
+		healthLabel.add_color_override("font_color", Color.white)
 	healthLabel.text = str(health) + "%"

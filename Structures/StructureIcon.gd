@@ -1,13 +1,14 @@
 extends Node2D
 class_name StructureIcon
 
-signal build(structure)
+signal icon_clicked(structure)
 
 enum {
 	OPEN,
 	CLOSE
 }
 
+export(int) var COST = 50
 export(String, FILE, "*.tscn") var TARGET_STRUCTURE = ""
 export(int) var ICON_CIRCLE_RADIUS = 36
 export(Color) var ICON_CIRCLE_COLOR = Utils.RGBA(15, 15, 15, 200)
@@ -46,4 +47,4 @@ func close():
 
 
 func _on_TextureButton_pressed():
-	emit_signal("build", TARGET_STRUCTURE)
+	emit_signal("icon_clicked", TARGET_STRUCTURE)

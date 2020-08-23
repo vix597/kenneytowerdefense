@@ -8,7 +8,6 @@
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 2 )
-HEALTH_COLOR = Color( 0, 0.54902, 0, 0.45098 )
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 

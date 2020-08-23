@@ -6,11 +6,8 @@ var save_data = null
 
 
 func save_game():
-	if save_data == null:
-		save_data = {}
-
+	var save_data = LevelStats.save_data()
 	_save_data_to_file(save_data)
-
 	return save_data
 
 
@@ -19,7 +16,7 @@ func load_game():
 	if save_data == null:
 		save_data = save_game()  # Create initial save
 
-	return save_data
+	LevelStats.load_data(save_data)
 
 
 func _save_data_to_file(data):

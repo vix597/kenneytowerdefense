@@ -102,7 +102,6 @@ window/stretch/aspect="keep"
 2d_physics/layer_4="ProjectileHitbox"
 2d_physics/layer_5="DefenseStructure"
 2d_physics/layer_6="DefenseStructureHurtbox"
-2d_physics/layer_7="LevelHurtbox"
 
 [rendering]
 
