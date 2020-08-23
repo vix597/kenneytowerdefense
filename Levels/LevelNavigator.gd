@@ -1,0 +1,2 @@
+extends Navigation2D
+class_name LevelNavigator

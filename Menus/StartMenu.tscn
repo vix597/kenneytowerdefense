@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Fonts/KenneyBlocks.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Menus/backgroundColorForest.png" type="Texture" id=2]
@@ -8,6 +8,13 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 256
+extra_spacing_top = -7
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 96
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_top = -7
 font_data = ExtResource( 1 )
 
@@ -54,6 +61,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="Level_00"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.206055
+margin_bottom = 100.794
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+text = "Level 1"
+align = 1
+valign = 1
+
 [node name="Level_01" type="TextureButton" parent="."]
 margin_left = 1145.76
 margin_top = 502.078
@@ -61,6 +80,23 @@ margin_right = 2823.76
 margin_bottom = 1449.08
 rect_scale = Vector2( 0.25, 0.25 )
 texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Level_01"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 1.99805
+margin_right = 12.0
+margin_bottom = 138.998
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+text = "Level 2"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

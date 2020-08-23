@@ -9,7 +9,7 @@
 radius = 51.1566
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 326.014
+radius = 450.0
 
 [node name="SingleCannon" instance=ExtResource( 1 )]
 script = ExtResource( 4 )

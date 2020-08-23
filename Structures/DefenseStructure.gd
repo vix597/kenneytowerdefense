@@ -29,6 +29,11 @@ func _ready():
 	upgrade_cost = UPGRADE_STARTING_COST
 
 
+func toggle():
+	upgradeIcon.toggle()
+	sellIcon.toggle()
+
+
 func _physics_process(delta):
 	match state:
 		StructureState.SEARCH:
@@ -57,11 +62,13 @@ func _on_TextureButton_pressed():
 
 
 func _on_SellIcon_icon_clicked(structure):
+	toggle()
 	emit_signal("sold", STRUCTURE_VALUE)
 	queue_free()
 
 
 func _on_UpgradeIcon_icon_clicked(structure):
+	toggle()
 	if upgrade_cost > LevelStats.money:
 		return
 	LevelStats.money -= upgrade_cost

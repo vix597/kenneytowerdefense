@@ -2,12 +2,18 @@ extends Node2D
 
 export(String) var LEVEL_ID = ""
 
+var navigators = []
+
 onready var endPoint = $EndPoint
+onready var startPoint = $StartPoint
 onready var enemySpawner = $EnemySpawner
-onready var navigation = $Navigation2D
 
 
 func _ready():
+	for child in get_children():
+		if child is LevelNavigator:
+			navigators.append(child)
+	
 	LevelStats.current_round = 1
 	next_round()
 
@@ -16,8 +22,14 @@ func next_round():
 	enemySpawner.spawn()
 
 
+func get_navigator():
+	navigators.shuffle()
+	return navigators[0]
+
+
 func _on_EnemySpawner_spawned(enemy):
-	var simple_path = navigation.get_simple_path(enemy.position, endPoint.position)
+	var nav = get_navigator()
+	var simple_path = nav.get_simple_path(enemy.position, endPoint.position)
 	enemy.nav_path = simple_path
 
 
