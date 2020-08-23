@@ -3,23 +3,20 @@ extends Stats
 export(int) var money = 400 setget set_money
 
 var current_round = 1 setget set_current_round
-var current_level_path = "res://Levels/Level_00.tscn"  # Set by level on load
 var current_level = null
-var rounds = 3 setget set_rounds  # Set by level on load
+var level_stats = {}
 
 signal money_changed(value)
-signal rounds_changed(value)
 signal current_round_changed(value)
 
 
 func set_current_round(value):
-	current_round = clamp(value, 1, self.rounds)
+	current_round = clamp(value, 1, 999999)
+	
+	if self.current_level and self.level_stats.has(self.current_level.LEVEL_ID):
+		self.level_stats[self.current_level.LEVEL_ID].max_rounds += 1
+	
 	emit_signal("current_round_changed", current_round)
-
-
-func set_rounds(value):
-	rounds = clamp(value, 1, 999)
-	emit_signal("rounds_changed", rounds)
 
 
 func set_money(value):
@@ -27,29 +24,27 @@ func set_money(value):
 	emit_signal("money_changed", money)
 
 
-func load_level(path):
+func load_level(packed_scene):
 	if self.current_level != null:
 		self.current_level.queue_free()
 	
-	self.current_level_path = path
-	self.current_level = Utils.instance_scene_on_main(load(self.current_level_path))
-	self.current_level.connect("level_complete", self, "_on_LevelStats_level_complete")
+	self.current_level = Utils.instance_scene_on_main(packed_scene)
+
+	if not self.level_stats.has(self.current_level.LEVEL_ID):
+		self.level_stats[self.current_level.LEVEL_ID] = {
+			"max_rounds": self.current_round
+		}
 
 
 func save_data():
 	return {
 		"money": self.money,
-		"current_level_path": self.current_level_path,
-		"current_round": self.current_round
+		"current_round": self.current_round,
+		"level_stats": self.level_stats
 	}
 
 
 func load_data(data):
 	self.money = data.get("money", self.money)
 	self.current_round = data.get("current_round", 1)
-	load_level(data.get("current_level_path", self.current_level_path))
-
-
-func _on_LevelStats_level_complete():
-	if not self.current_level.FINAL_LEVEL:
-		load_level(self.current_level.NEXT_LEVEL_PATH)
+	self.level_stats = data.get("level_stats", {})

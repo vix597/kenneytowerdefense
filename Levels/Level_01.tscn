@@ -1,0 +1,155 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Structures/ConstructionZone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Effects/dirt-spots.png" type="Texture" id=3]
+[ext_resource path="res://World/medium-rock.png" type="Texture" id=4]
+[ext_resource path="res://World/small-tuft.png" type="Texture" id=5]
+[ext_resource path="res://Effects/explosion-scar.png" type="Texture" id=6]
+[ext_resource path="res://World/small-rock.png" type="Texture" id=7]
+[ext_resource path="res://World/large-rock.png" type="Texture" id=8]
+[ext_resource path="res://World/large-tuft.png" type="Texture" id=9]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 379.421, 831.024, -28.7932, 838.584, -144.706, 825.985, -132.107, 705.032, 321.465, 677.314, 417.219, 692.433, 369.342, 599.199, 447.457, 190.985, 376.901, 143.108, 1011.9, 127.988, 936.306, 170.826, 1062.3, 463.128, 1037.1, 546.282, 1586.43, 528.643, 1465.47, 470.687, 1520.91, 392.572, 1586.43, 294.298, 1513.35, 243.901, 2095.43, 309.417, 2072.75, 201.064, 2123.15, 246.421 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 5, 4, 6 ), PoolIntArray( 7, 5, 6, 8 ), PoolIntArray( 7, 8, 9, 10 ), PoolIntArray( 10, 9, 11, 12 ), PoolIntArray( 13, 12, 11, 14 ), PoolIntArray( 13, 14, 15 ), PoolIntArray( 16, 13, 15, 17 ), PoolIntArray( 18, 16, 17, 19, 20 ) ]
+outlines = [ PoolVector2Array( -132.107, 705.032, 321.465, 677.314, 369.342, 599.199, 376.901, 143.108, 1011.9, 127.988, 1062.3, 463.128, 1465.47, 470.687, 1520.91, 392.572, 1513.35, 243.901, 2072.75, 201.064, 2123.15, 246.421, 2095.43, 309.417, 1586.43, 294.298, 1586.43, 528.643, 1037.1, 546.282, 936.306, 170.826, 447.457, 190.985, 417.219, 692.433, 379.421, 831.024, -28.7932, 838.584, -144.706, 825.985 ) ]
+
+[sub_resource type="NavigationPolygon" id=2]
+vertices = PoolVector2Array( -18.7138, 838.584, -127.067, 823.465, -185.023, 755.429, -119.508, 689.913, 349.183, 705.032, 192.953, 833.544, 298.786, 853.703, 512.973, 888.981, 429.818, 936.858, 805.275, 934.338, 961.505, 878.901, 1032.06, 924.259, 1057.26, 818.425, 1011.9, 730.231, 1037.1, 644.556, 989.223, 568.961, 1147.97, 561.401, 1074.9, 488.326, 1553.67, 541.243, 1344.52, 470.687, 1495.71, 465.647, 1578.87, 463.128, 1593.99, 377.453, 1528.47, 357.294, 1601.54, 294.298, 1536.03, 248.941, 2082.83, 304.377, 1694.78, 231.302, 2080.31, 208.623, 2108.03, 253.981 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 6, 5, 4, 7 ), PoolIntArray( 8, 6, 7 ), PoolIntArray( 9, 8, 7, 10, 11 ), PoolIntArray( 12, 11, 10, 13 ), PoolIntArray( 14, 12, 13, 15 ), PoolIntArray( 16, 14, 15, 17 ), PoolIntArray( 18, 16, 17, 19, 20, 21 ), PoolIntArray( 22, 21, 20, 23, 24 ), PoolIntArray( 24, 23, 25 ), PoolIntArray( 26, 24, 25, 27, 28, 29 ) ]
+outlines = [ PoolVector2Array( -119.508, 689.913, 349.183, 705.032, 512.973, 888.981, 961.505, 878.901, 1011.9, 730.231, 989.223, 568.961, 1074.9, 488.326, 1344.52, 470.687, 1495.71, 465.647, 1528.47, 357.294, 1536.03, 248.941, 1694.78, 231.302, 2080.31, 208.623, 2108.03, 253.981, 2082.83, 304.377, 1601.54, 294.298, 1593.99, 377.453, 1578.87, 463.128, 1553.67, 541.243, 1147.97, 561.401, 1037.1, 644.556, 1057.26, 818.425, 1032.06, 924.259, 805.275, 934.338, 429.818, 936.858, 298.786, 853.703, 192.953, 833.544, -18.7138, 838.584, -127.067, 823.465, -185.023, 755.429 ) ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 25.3082
+height = 224.701
+
+[node name="Level_01" instance=ExtResource( 1 )]
+LEVEL_ID = "level_01"
+
+[node name="TileMap" parent="." index="0"]
+tile_data = PoolIntArray( -2, 11, 65542, -1, 11, 65542, -65536, 11, 65542, -65535, 11, 65542, -65534, 11, 65542, -65533, 11, 65542, -65532, 11, 65542, -65531, 11, 65542, -65530, 11, 65542, -65529, 11, 65542, -65528, 11, 65542, -65527, 11, 65542, -65526, 11, 65542, -65525, 11, 65542, -65524, 11, 65542, -65523, 11, 65542, -65522, 11, 65542, -65521, 11, 65542, -65520, 11, 65542, 65534, 11, 65542, 65535, 11, 65542, 0, 11, 65542, 1, 11, 65542, 2, 10, 3, 3, 10, 131073, 4, 10, 131073, 5, 10, 131073, 6, 10, 131073, 7, 10, 131073, 8, 10, 4, 9, 11, 65542, 10, 11, 65542, 11, 11, 65542, 12, 11, 65542, 13, 11, 65542, 14, 11, 65542, 15, 11, 65542, 16, 11, 65542, 131070, 11, 65542, 131071, 11, 65542, 65536, 11, 65542, 65537, 11, 65542, 65538, 10, 65538, 65539, 10, 0, 65540, 10, 1, 65541, 10, 1, 65542, 10, 1, 65543, 10, 2, 65544, 10, 65536, 65545, 11, 65542, 65546, 11, 65542, 65547, 10, 3, 65548, 10, 131073, 65549, 10, 131073, 65550, 10, 131073, 65551, 10, 131073, 65552, 10, 4, 196606, 11, 65542, 196607, 11, 65542, 131072, 11, 65542, 131073, 11, 65542, 131074, 10, 65538, 131075, 10, 65536, 131076, 11, 65542, 131077, 11, 65542, 131078, 11, 65542, 131079, 10, 65538, 131080, 10, 65536, 131081, 11, 65542, 131082, 11, 65542, 131083, 10, 65538, 131084, 10, 0, 131085, 10, 1, 131086, 10, 1, 131087, 10, 1, 131088, 10, 65540, 262142, 11, 65542, 262143, 11, 65542, 196608, 11, 65542, 196609, 11, 65542, 196610, 10, 65538, 196611, 10, 65536, 196612, 11, 65542, 196613, 11, 65542, 196614, 11, 65542, 196615, 10, 65538, 196616, 10, 131072, 196617, 10, 131073, 196618, 10, 131073, 196619, 10, 131074, 196620, 10, 65536, 196621, 11, 65542, 196622, 11, 65542, 196623, 11, 65542, 196624, 11, 65542, 327678, 11, 65542, 327679, 11, 65542, 262144, 11, 65542, 262145, 11, 65542, 262146, 10, 65538, 262147, 10, 65536, 262148, 11, 65542, 262149, 11, 65542, 262150, 11, 65542, 262151, 10, 65538, 262152, 10, 0, 262153, 10, 1, 262154, 10, 1, 262155, 10, 1, 262156, 10, 65540, 262157, 11, 65542, 262158, 11, 65542, 262159, 11, 65542, 262160, 11, 65542, 393214, 10, 3, 393215, 10, 131073, 327680, 10, 131073, 327681, 10, 131073, 327682, 10, 131074, 327683, 10, 65536, 327684, 11, 65542, 327685, 11, 65542, 327686, 11, 65542, 327687, 10, 65538, 327688, 10, 65536, 327689, 11, 65542, 327690, 11, 65542, 327691, 11, 65542, 327692, 11, 65542, 327693, 11, 65542, 327694, 11, 65542, 327695, 11, 65542, 327696, 11, 65542, 458750, 10, 65539, 458751, 10, 1, 393216, 10, 1, 393217, 10, 1, 393218, 10, 2, 393219, 10, 131072, 393220, 10, 131073, 393221, 10, 131073, 393222, 10, 131073, 393223, 10, 131074, 393224, 10, 65536, 393225, 11, 65542, 393226, 11, 65542, 393227, 11, 65542, 393228, 11, 65542, 393229, 11, 65542, 393230, 11, 65542, 393231, 11, 65542, 393232, 11, 65542, 524286, 11, 65542, 524287, 11, 65542, 458752, 11, 65542, 458753, 11, 65542, 458754, 10, 65539, 458755, 10, 1, 458756, 10, 1, 458757, 10, 1, 458758, 10, 1, 458759, 10, 1, 458760, 10, 65540, 458761, 11, 65542, 458762, 11, 65542, 458763, 11, 65542, 458764, 11, 65542, 458765, 11, 65542, 458766, 11, 65542, 458767, 11, 65542, 458768, 11, 65542, 589822, 11, 65542, 589823, 11, 65542, 524288, 11, 65542, 524289, 11, 65542, 524290, 11, 65542, 524291, 11, 65542, 524292, 11, 65542, 524293, 11, 65542, 524294, 11, 65542, 524295, 11, 65542, 524296, 11, 65542, 524297, 11, 65542, 524298, 11, 65542, 524299, 11, 65542, 524300, 11, 65542, 524301, 11, 65542, 524302, 11, 65542, 524303, 11, 65542, 524304, 11, 65542 )
+
+[node name="EndPoint" parent="." index="1"]
+position = Vector2( 2068.79, 259.544 )
+
+[node name="EnemySpawner" parent="." index="2"]
+position = Vector2( -22.6785, 771.072 )
+
+[node name="Navigation" parent="Navigation2D" index="0"]
+navpoly = SubResource( 1 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D" index="1"]
+navpoly = SubResource( 2 )
+
+[node name="Hurtbox" parent="." index="4"]
+position = Vector2( 1940.28, 254.504 )
+
+[node name="Collider" parent="Hurtbox" index="0"]
+shape = SubResource( 3 )
+
+[node name="ConstructionZone" parent="." index="5" instance=ExtResource( 2 )]
+position = Vector2( 191.698, 576.814 )
+
+[node name="ConstructionZone2" parent="." index="6" instance=ExtResource( 2 )]
+position = Vector2( 569.865, 724.276 )
+
+[node name="ConstructionZone3" parent="." index="7" instance=ExtResource( 2 )]
+position = Vector2( 850.518, 726.654 )
+
+[node name="ConstructionZone4" parent="." index="8" instance=ExtResource( 2 )]
+position = Vector2( 848.14, 305.675 )
+
+[node name="ConstructionZone5" parent="." index="9" instance=ExtResource( 2 )]
+position = Vector2( 565.109, 300.918 )
+
+[node name="ConstructionZone6" parent="." index="10" instance=ExtResource( 2 )]
+position = Vector2( 1361.88, 338.973 )
+
+[node name="ConstructionZone7" parent="." index="11" instance=ExtResource( 2 )]
+position = Vector2( 1706.75, 426.974 )
+
+[node name="ConstructionZone8" parent="." index="12" instance=ExtResource( 2 )]
+position = Vector2( 1373.77, 679.086 )
+
+[node name="large-rock" type="Sprite" parent="." index="13"]
+position = Vector2( 186.98, 105.397 )
+texture = ExtResource( 8 )
+
+[node name="small-rock" type="Sprite" parent="." index="14"]
+position = Vector2( 202.998, 935.668 )
+texture = ExtResource( 7 )
+
+[node name="large-rock3" type="Sprite" parent="." index="15"]
+position = Vector2( 1289.56, 86.7097 )
+rotation = -2.0944
+texture = ExtResource( 8 )
+
+[node name="large-rock2" type="Sprite" parent="." index="16"]
+position = Vector2( 686.21, 500.51 )
+rotation = 2.35619
+texture = ExtResource( 8 )
+
+[node name="large-tuft" type="Sprite" parent="." index="17"]
+position = Vector2( 1647.29, 706.076 )
+rotation = 0.785397
+texture = ExtResource( 9 )
+
+[node name="medium-rock" type="Sprite" parent="." index="18"]
+position = Vector2( 1342.95, 943.677 )
+texture = ExtResource( 4 )
+
+[node name="small-rock2" type="Sprite" parent="." index="19"]
+position = Vector2( 1276.21, 1010.42 )
+texture = ExtResource( 7 )
+
+[node name="large-rock4" type="Sprite" parent="." index="20"]
+position = Vector2( 1238.83, 1095.85 )
+texture = ExtResource( 8 )
+
+[node name="small-tuft" type="Sprite" parent="." index="21"]
+position = Vector2( 78.7716, 1007.48 )
+texture = ExtResource( 5 )
+
+[node name="small-tuft2" type="Sprite" parent="." index="22"]
+position = Vector2( 70.7626, 158.518 )
+rotation = 0.523598
+texture = ExtResource( 5 )
+
+[node name="explosion-scar" type="Sprite" parent="." index="23"]
+position = Vector2( 707.907, 683.414 )
+texture = ExtResource( 6 )
+
+[node name="explosion-scar2" type="Sprite" parent="." index="24"]
+position = Vector2( 1199.35, 230.926 )
+texture = ExtResource( 6 )
+
+[node name="explosion-scar3" type="Sprite" parent="." index="25"]
+position = Vector2( 1846.62, 488.635 )
+texture = ExtResource( 6 )
+
+[node name="dirt-spots" type="Sprite" parent="." index="26"]
+position = Vector2( 54.6449, 335.807 )
+texture = ExtResource( 3 )
+
+[node name="dirt-spots2" type="Sprite" parent="." index="27"]
+position = Vector2( 555.079, 114.058 )
+texture = ExtResource( 3 )
+
+[node name="dirt-spots3" type="Sprite" parent="." index="28"]
+position = Vector2( 1546.96, 99.0746 )
+texture = ExtResource( 3 )
+
+[node name="dirt-spots4" type="Sprite" parent="." index="29"]
+position = Vector2( 1597.9, 578.533 )
+texture = ExtResource( 3 )
+
+[node name="dirt-spots5" type="Sprite" parent="." index="30"]
+position = Vector2( 1579.92, 881.191 )
+texture = ExtResource( 3 )
+
+[node name="dirt-spots6" type="Sprite" parent="." index="31"]
+position = Vector2( 1073.49, 965.096 )
+texture = ExtResource( 3 )
+
+[editable path="Hurtbox"]

@@ -76,7 +76,7 @@ _global_script_class_icons={
 
 config/name="Kenney Tower Defense"
 config/description="Tower defense game for Kenney jam 2020"
-run/main_scene="res://World/World.tscn"
+run/main_scene="res://Menus/StartMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
