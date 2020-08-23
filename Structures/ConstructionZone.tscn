@@ -34,9 +34,11 @@ __meta__ = {
 
 [node name="SingleCannonIcon" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, -100 )
+scale = Vector2( 1, 1 )
 
 [node name="MachineGunIcon" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 100 )
+scale = Vector2( 1, 1 )
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="icon_clicked" from="SingleCannonIcon" to="." method="_on_SingleCannonIcon_icon_clicked"]
 [connection signal="icon_clicked" from="MachineGunIcon" to="." method="_on_MachineGunIcon_icon_clicked"]

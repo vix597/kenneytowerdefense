@@ -40,9 +40,11 @@ __meta__ = {
 
 [node name="SellIcon" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 100 )
+scale = Vector2( 1, 1 )
 
 [node name="UpgradeIcon" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -100 )
+scale = Vector2( 1, 1 )
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="icon_clicked" from="SellIcon" to="." method="_on_SellIcon_icon_clicked"]
 [connection signal="icon_clicked" from="UpgradeIcon" to="." method="_on_UpgradeIcon_icon_clicked"]
