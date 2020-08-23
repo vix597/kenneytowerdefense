@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Structures/DefenseStructure.gd" type="Script" id=1]
 [ext_resource path="res://Overlap/DetectionZone.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Structures/SellIcon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Structures/UpgradeIcon.tscn" type="PackedScene" id=4]
 
 [node name="DefenseStructure" type="StaticBody2D"]
 collision_layer = 16
@@ -39,7 +40,11 @@ __meta__ = {
 
 [node name="SellIcon" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 100 )
+
+[node name="UpgradeIcon" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -100 )
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="icon_clicked" from="SellIcon" to="." method="_on_SellIcon_icon_clicked"]
+[connection signal="icon_clicked" from="UpgradeIcon" to="." method="_on_UpgradeIcon_icon_clicked"]
 
 [editable path="EnemyDetectionZone"]

@@ -31,7 +31,7 @@ position = Vector2( 2281, 882 )
 
 [node name="EnemySpawner" parent="." index="2"]
 position = Vector2( 260, 1125 )
-ENEMIES_TO_SPAWN = 5
+SPAWN_DELAY = 0.95
 
 [node name="Scenery" type="Node" parent="." index="3"]
 

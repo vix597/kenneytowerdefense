@@ -19,6 +19,7 @@ onready var enemyDetector = $EnemyDetectionZone
 onready var muzzle = $Body/Muzzle
 onready var attackCooldown = $AttackCooldown
 onready var sellIcon = $SellIcon
+onready var upgradeIcon = $UpgradeIcon
 
 
 func _physics_process(delta):
@@ -45,8 +46,13 @@ func seek_enemy():
 
 func _on_TextureButton_pressed():
 	sellIcon.toggle()
+	upgradeIcon.toggle()
 
 
 func _on_SellIcon_icon_clicked(structure):
 	emit_signal("sold", STRUCTURE_VALUE)
 	queue_free()
+
+
+func _on_UpgradeIcon_icon_clicked(structure):
+	print("Upgrade!")
